@@ -16,14 +16,18 @@ const Header = ({ username, repositoryname }) => {
                     >
                         Go Back
                     </button>
-                    <button
-                        id="go-repository-list"
-                        className="btn"
-                        type="button"
-                        onClick={() => navigate(`/${username}`)}
-                    >
-                        Go to repositories
-                    </button>
+                    {repositoryname ? (
+                        <button
+                            id="go-repository-list"
+                            className="btn"
+                            type="button"
+                            onClick={() => navigate(`/${username}`)}
+                        >
+                            Go to repositories
+                        </button>
+                    ) : (
+                        <div />
+                    )}
                 </div>
                 <div id="repository-name" className="username">
                     {username} {repositoryname}
