@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import valueContext from '../contexts/valueContext'
 
 import Header from './Header'
 
@@ -21,7 +22,9 @@ const RepositoriesList = () => {
     return (
         <Container>
             <div>
-                <Header {...{ username }} />
+                <valueContext.Provider value={{ username }}>
+                    <Header />
+                </valueContext.Provider>
                 <div className="list">
                     <ul>
                         {repoList.map((repo) => {

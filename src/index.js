@@ -9,16 +9,12 @@ import valueContext from './contexts/valueContext'
 
 function Main() {
     const [value, setValue] = useState('')
-    // const [username, setUsername] = useState('')
-    // const [repositoryname, setRepositoryname] = useState('')
 
     return (
         <React.StrictMode>
             <BrowserRouter>
                 <valueContext.Provider value={{ value, setValue }}>
-                    {/* <namesContext.Provider value={{ username, repositoryname }}> */}
                     <App />
-                    {/* </namesContext.Provider> */}
                 </valueContext.Provider>
             </BrowserRouter>
         </React.StrictMode>

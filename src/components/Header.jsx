@@ -1,14 +1,13 @@
-import React /* { useContext } */ from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
-// import namesContext from '../contexts/valueContext'
+import valueContext from '../contexts/valueContext'
 
-const Header = ({ username, repositoryname }) => {
+const Header = () => {
     const navigate = useNavigate()
 
-    // const { username, repositoryname } = useContext(namesContext)
+    const { username, repositoryname } = useContext(valueContext)
     console.log(username, repositoryname)
-
     return (
         <Container>
             <div className="header">
