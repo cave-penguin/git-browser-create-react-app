@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import axios from 'axios'
 import styled from 'styled-components'
 import Header from './Header'
+import namesContext from '../contexts/namesContext'
 
 const Repository = () => {
     const { username, repositoryname } = useParams()
     const [readme, setReadme] = useState('')
+    // const { username, repositoryname } = useContext(namesContext)
 
     const url = `https://raw.githubusercontent.com/${username}/${repositoryname}/master/README.md`
     useEffect(() => {

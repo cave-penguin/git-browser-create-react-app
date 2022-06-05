@@ -1,9 +1,14 @@
-import React from 'react'
+import React /* { useContext } */ from 'react'
 import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
+// import namesContext from '../contexts/valueContext'
 
 const Header = ({ username, repositoryname }) => {
     const navigate = useNavigate()
+
+    // const { username, repositoryname } = useContext(namesContext)
+    console.log(username, repositoryname)
+
     return (
         <Container>
             <div className="header">
@@ -14,7 +19,7 @@ const Header = ({ username, repositoryname }) => {
                         type="button"
                         onClick={() => navigate('/')}
                     >
-                        Go Back
+                        Go to Main
                     </button>
                     {repositoryname ? (
                         <button

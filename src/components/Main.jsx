@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
+import filesContext from '../contexts/valueContext'
 
 const Main = () => {
     const navigate = useNavigate()
-    const [value, setvalue] = useState('')
+    const { value, setValue } = useContext(filesContext)
 
-    const onChange = (e) => setvalue(e.target.value)
+    const onChange = (e) => setValue(e.target.value)
     const onClick = () => navigate(`/${value}`)
 
     return (
